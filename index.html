@@ -20,7 +20,7 @@
 </header>
 <body>
     <div class="welcome" id="welcome">
-        <div class="content">
+        <div class="content-top">
             <img id="white-logo" src="/img/rosmtg.png" alt="Russian Old School MtG">
         </div>
     </div>
@@ -35,9 +35,20 @@
 
         </div>
     </div>
-    <div class="decks" id="decks"></div>
+    <div class="decks" id="decks">
+        <div class="content">
+            <div class="slider">
+                <img src="/img/White-Weenie.jpg" alt="White Weenie">
+                <img class="hide" src="/img/Erhnam-BurnEm.jpg" alt="Erhnam Burn">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
+        </div>
+    </div>
 </body>
 <footer>
+    <p>© <a href="https://viacheslavivanov.ru/" target="_blank">Viacheslav Ivanov</a>, 2019</p>
+        <script src="/JS/script.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
@@ -45,7 +56,7 @@
                    event.preventDefault();
                    var id  = $(this).attr('href'),
                        top = $(id).offset().top;
-                   $('body,html').animate({scrollTop: top}, 1000);
+                   $('body,html').animate({scrollTop: top}, 700);
                });
            });
            </script>
