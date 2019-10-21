@@ -9,37 +9,75 @@
 </head>
 <header>
     <img id="logo" src="/img/rosmtg.png" alt="Russian Old School MtG">
-    <div id="menu">
+    <nav class="menu">
         <ul>
             <!--<li><a href="#welcome">WELCOME</a></li>-->
-            <li><a href="#about">О ФОРМАТЕ</a></li>
-            <li><a href="#formats">ВАРИАНТЫ ПРАВИЛ</a></li>
-            <li><a href="#decks">КОЛОДЫ</a></li>
+            <li><a href="#about">О формате</a></li>
+            <li><a href="#formats">Варианты правил</a></li>
+            <li><a href="#decks">Колоды</a></li>
         </ul>
-    </div>
+    </nav>
 </header>
 <body>
     <div class="welcome" id="welcome">
-        <div class="content-top">
+        <div class="content top">
             <img id="white-logo" src="/img/rosmtg.png" alt="Russian Old School MtG">
         </div>
     </div>
     <div class="story" id="about">
-        <div class="content">
-            <p>Old School — это формат, в который играют толстые тридцатилетние парни. Колоды стоят по 30000$, поэтому играют обычно в барах, где их легко украсть. Еще очень популярна среди них одна карта, которая должна перевернуться в воздухе, чтобы что-то сделать. Она очень дорогая, но ее все равно бросают. Вам стоит присоединиться! — TheGarbageStore</p>
-            <p>А если серьезно, Old School MTG — это казуальный формат, который позволяет игрокам максимально прочувствовать историю игры. Здесь легальны только карты, выпущенные в 93 и 94 годах (или почти не отличающиеся от них репринты), Serra Angel — одно из лучших существ, а Black Lotus позволяет на первый ход разыграть Icy Manipulator. Формат обязательно понравится любому любителю ретро-игр и  фильмов на кассетах!</p>
+        <div class="content columns">
+            <div class="text">
+            <p>Old School — это формат, в который играют толстые тридцатилетние парни. 
+                Колоды стоят по 30000$, поэтому играют обычно в барах, где их легко украсть. 
+                Еще очень популярна среди них одна карта, которая должна перевернуться в воздухе, 
+                чтобы что-то сделать. Она очень дорогая, но ее все равно бросают. 
+                Вам стоит присоединиться! — TheGarbageStore
+            </p>
+            </div>
+            <div class="text">
+            <p>А если серьезно, Old School MTG — это казуальный формат, который позволяет игрокам 
+                максимально прочувствовать историю игры. Здесь легальны только карты, выпущенные 
+                в 93 и 94 годах (или почти не отличающиеся от них репринты), Serra Angel — 
+                одно из лучших существ, а Black Lotus позволяет на первый ход разыграть Icy Manipulator. 
+                Формат обязательно понравится любому любителю ретро-игр и  фильмов на кассетах!</p>
+            </div>
         </div>
     </div>
     <div class="formats" id="formats">
-        <div class="background_content">
-
+        <div class="content background">
+            <nav class="tabs">
+                <ul>
+                    <li>Swedish</li>
+                    <li>Atlantic</li>
+                    <li>Eternal Central</li>
+                    <li>Old School 95</li>
+                    <li>Revised 40</li>
+                </ul>
+            </nav>
+            <div class="little-columns">
+                <div class="text">
+                    <p>Old School — это формат, в который играют толстые тридцатилетние парни. 
+                                Колоды стоят по 30000$, поэтому играют обычно в барах, где их легко украсть. 
+                                Еще очень популярна среди них одна карта, которая должна перевернуться в воздухе, 
+                                чтобы что-то сделать. Она очень дорогая, но ее все равно бросают. 
+                                Вам стоит присоединиться! — TheGarbageStore
+                    </p>
+                </div>
+                <div class="text">
+                    <p>А если серьезно, Old School MTG — это казуальный формат, который позволяет игрокам 
+                                максимально прочувствовать историю игры. Здесь легальны только карты, выпущенные 
+                                в 93 и 94 годах (или почти не отличающиеся от них репринты), Serra Angel — 
+                                одно из лучших существ, а Black Lotus позволяет на первый ход разыграть Icy Manipulator. 
+                        Формат обязательно понравится любому любителю ретро-игр и  фильмов на кассетах!</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="decks" id="decks">
-        <div class="content">
+        <div class="content bottom">
             <div class="slider">
-                <img src="/img/White-Weenie.jpg" alt="White Weenie">
-                <img class="hide" src="/img/Erhnam-BurnEm.jpg" alt="Erhnam Burn">
+                <img class="deck fade" src="/img/White-Weenie.jpg" alt="White Weenie">
+                <img class="deck fade" src="/img/Erhnam-BurnEm.jpg" alt="Erhnam Burn">
                 <div class="prev"></div>
                 <div class="next"></div>
             </div>
@@ -48,17 +86,17 @@
 </body>
 <footer>
     <p>© <a href="https://viacheslavivanov.ru/" target="_blank">Viacheslav Ivanov</a>, 2019</p>
-        <script src="/JS/script.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-               $("#menu").on("click","a", function (event) {
-                   event.preventDefault();
-                   var id  = $(this).attr('href'),
-                       top = $(id).offset().top;
-                   $('body,html').animate({scrollTop: top}, 700);
-               });
-           });
-           </script>
+    <script src="/JS/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".menu").on("click","a", function (event) {
+                event.preventDefault();
+                var id  = $(this).attr('href'),
+                    top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top}, 700);
+            });
+        });
+    </script>
 </footer>
 </html>

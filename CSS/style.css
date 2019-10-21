@@ -1,3 +1,38 @@
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+  }
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
@@ -21,7 +56,7 @@ header {
     transition: 0.5s ease;
 }
 
-#menu {
+.menu {
     display: flex;
     position: relative;
     float: right;
@@ -31,19 +66,19 @@ header {
     justify-content: center;
 }
 
-header ul {
+.menu ul {
     display: block;
     padding: 0;
     margin: 0;
 }
 
-header li {
+.menu li {
     display: inline;
     list-style: none;
     padding: 0 20px 0 0;
 }
 
-header a {
+.menu a {
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -56,7 +91,7 @@ header a {
     transition: background 0.5s ease;
 }
 
-header a:hover {
+.menu a:hover {
     background-color: rgba(211, 211, 211, 0.3);
     transition: background 0.5s ease;
 }
@@ -71,6 +106,7 @@ header a:hover {
 
 .decks {
     height: 92vh;
+    transition: display 0.5s ease;
 }
 
 .welcome {
@@ -97,17 +133,6 @@ header a:hover {
     background-color: rgb(241, 243, 205);
 }
 
-.content-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 1050px;
-    max-width: 100%;
-    height: 800px;
-    margin: 5% auto 5% auto;
-    padding: 5px;
-}
-
 .content {
     display: flex;
     flex-direction: column;
@@ -115,8 +140,24 @@ header a:hover {
     width: 1050px;
     max-width: 100%;
     height: 800px;
-    margin: 10% auto 5% auto;
+    margin: 9% auto 5% auto;
     padding: 5px;
+}
+
+.top {
+    margin: 5% auto 5% auto;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.columns {
+    flex-direction: row;
+}
+
+.bottom {
+    margin: 8% auto 5% auto;
 }
 
 #white-logo {
@@ -124,14 +165,63 @@ header a:hover {
     max-width: 100%;
 }
 
-.background_content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 1050px;
+.text {
+    display: inline-block;
+    width: 520px;
     height: 800px;
-    margin: 10% auto 5% auto;
-    background-color: white;
+}
+
+.text + .text {
+    margin-left: 10px;
+}
+
+.tabs {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    color: wheat;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+}
+
+.tabs ul {
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.tabs li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.tabs li:after {
+	display: block;
+	position: relative;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color:wheat;
+	content: "";
+	transition: width 0.3s ease-out;
+}
+
+.tabs li:hover:after,
+.tabs li:focus:after {
+	width: 100%;
+}
+
+.little-columns {
+    display: flex;
+    color: wheat;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border-top: 1px solid wheat;
 }
 
 .hide {
@@ -143,6 +233,7 @@ header a:hover {
     height: 635px;
     position: relative;
     margin: 0 auto;
+    background-color: black;
 }
 
 .prev {
@@ -159,6 +250,10 @@ header a:hover {
 
 .prev:hover {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.deck {
+    transition: 0.5s;
 }
 
 .next {
