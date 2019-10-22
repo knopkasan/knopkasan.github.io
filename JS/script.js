@@ -17,6 +17,25 @@ window.addEventListener("DOMContentLoaded", () => {
       logo.style.opacity = "0";
     }
   };
+//TABS
+  let tabs = document.querySelector(".tabs"),
+      tab = tabs.querySelectorAll("li"),
+      content = document.querySelectorAll(".little-columns");
+
+  for (let i = 0; i < content.length; i++) {
+    content[i].style.display = "none";
+  }
+  content[0].style.display = "flex";
+
+  for (let j = 0; j < tab.length; j++) {
+    tab[j].addEventListener("click", function(e) {
+      e.preventDefault();
+      for (let i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+      }
+      content[j].style.display = "flex";
+    });
+  }
 //SLIDER
   let slideIndex = 1,
   slides = document.querySelectorAll(".deck"),
