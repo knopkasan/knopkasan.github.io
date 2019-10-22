@@ -1,32 +1,8 @@
+/*DOCUMENT*/
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
-.fade {
-    -webkit-animation-name: fade;
-            animation-name: fade;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 2s;
-  }
-  @-webkit-keyframes fade {
-    from {
-      opacity: 0.1;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fade {
-    from {
-      opacity: 0.1;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
 html {
     -ms-overflow-style: none;
@@ -39,6 +15,10 @@ body {
     margin: 0;
 }
 
+.hide {
+    display: none;
+}
+/*HEADER*/
 header {
     position: fixed;
     width: 100%;
@@ -110,7 +90,7 @@ header {
     background-color: rgba(211, 211, 211, 0.3);
     transition: background 0.5s ease;
 }
-
+/*PAGES*/
 .welcome, .story, .formats, .decks {
     height: 100vh;
     width: 100%;
@@ -121,7 +101,6 @@ header {
 
 .decks {
     height: 92vh;
-    transition: display 0.5s ease;
 }
 
 .welcome {
@@ -148,37 +127,29 @@ header {
     background-size: cover;
     background-color: rgb(241, 243, 205);
 }
-
+/*CONTENT BOXES*/
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 1050px;
     max-width: 98%;
-    height: 800px;
-    margin: 9% auto 5% auto;
+    height: 700px;
+    margin: 8vh auto 0 auto;
     padding: 5px;
 }
-
+/*MAIN PAGE*/
 .top {
-    margin: 5% auto 5% auto;
-}
-
-.background {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.columns {
-    flex-direction: row;
-}
-
-.bottom {
-    margin: 8% auto 5% auto;
+    margin-top: 0;
 }
 
 #white-logo {
     position: relative;
     max-width: 100%;
+}
+/*ABOUT*/
+.columns {
+    flex-direction: row;
 }
 
 .text {
@@ -191,6 +162,10 @@ header {
 .text + .text {
     margin-left: 10px;
 }
+/*FORMATS*/
+.background {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 .tabs {
     position: relative;
@@ -201,6 +176,10 @@ header {
     flex-direction: row;
     position: relative;
     width: 100%;
+}
+
+.background .text {
+    height: 680px;
 }
 
 .tabs ul {
@@ -221,19 +200,19 @@ header {
 }
 
 .tabs a:after {
-	display: block;
-	position: relative;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background-color:wheat;
-	content: "";
-	transition: width 0.3s ease-out;
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color:wheat;
+    content: "";
+    transition: width 0.3s ease-out;
 }
 
 .tabs a:hover:after,
 .tabs a:focus:after {
-	width: 100%;
+    width: 100%;
 }
 
 .little-columns {
@@ -245,9 +224,32 @@ header {
     height: 90%;
     border-top: 1px solid wheat;
 }
+/*DECKS*/
+.fade {
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+}
 
-.hide {
-    display: none;
+@-webkit-keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
 }
 
 .slider {
@@ -257,6 +259,12 @@ header {
     position: relative;
     margin: 0 auto;
     background-color: black;
+}
+
+.deck {
+    transition: 0.5s;
+    max-width: 100%;
+    margin: 0;
 }
 
 .prev {
@@ -275,12 +283,6 @@ header {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.deck {
-    transition: 0.5s;
-    max-width: 100%;
-    margin: 0;
-}
-
 .next {
     position: absolute;
     cursor: pointer;
@@ -296,15 +298,14 @@ header {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
-
+/*FOOTER*/
 footer {
     position: absolute;
     background-color: #3d1413;
     width: 100%;
-    height: 7vh;
+    height: 8vh;
     margin: 0;
     transition: background 0.5s ease;
-    border-top: 1px solid black;
 }
 
 .social-box {
@@ -396,4 +397,8 @@ footer {
 .copiright p a {
     text-decoration: none;
     color: white;
+}
+/*MOBILE SCREENS*/
+@media screen and (max-width: 939px) {
+
 }

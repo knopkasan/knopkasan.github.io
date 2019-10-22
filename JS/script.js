@@ -1,5 +1,14 @@
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
+//SCROLL
+  $(document).ready(function(){
+    $(".menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 700);
+    });
+  });
 //HEADER
   let header = document.querySelector("header"),
       logo = document.querySelector("#logo");
@@ -17,6 +26,25 @@ window.addEventListener("DOMContentLoaded", () => {
       logo.style.opacity = "0";
     }
   };
+//TABS
+  let tabs = document.querySelector(".tabs"),
+      tab = tabs.querySelectorAll("li"),
+      content = document.querySelectorAll(".little-columns");
+
+  for (let i = 0; i < content.length; i++) {
+    content[i].style.display = "none";
+  }
+  content[0].style.display = "flex";
+
+  for (let j = 0; j < tab.length; j++) {
+    tab[j].addEventListener("click", function(e) {
+      e.preventDefault();
+      for (let i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+      }
+      content[j].style.display = "flex";
+    });
+  }
 //SLIDER
   let slideIndex = 1,
   slides = document.querySelectorAll(".deck"),
