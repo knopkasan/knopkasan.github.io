@@ -3,31 +3,6 @@
     background: transparent;
 }
 
-.fade {
-    -webkit-animation-name: fade;
-            animation-name: fade;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 2s;
-  }
-  @-webkit-keyframes fade {
-    from {
-      opacity: 0.1;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fade {
-    from {
-      opacity: 0.1;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
 html {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -39,6 +14,10 @@ body {
     margin: 0;
 }
 
+.hide {
+    display: none;
+}
+/*HEADER*/
 header {
     position: fixed;
     width: 100%;
@@ -110,7 +89,7 @@ header {
     background-color: rgba(211, 211, 211, 0.3);
     transition: background 0.5s ease;
 }
-
+/*LANDING PAGES*/
 .welcome, .story, .formats, .decks {
     height: 100vh;
     width: 100%;
@@ -175,12 +154,12 @@ header {
 .bottom {
     margin: 8% auto 5% auto;
 }
-
+/*MAIN PAGE*/
 #white-logo {
     position: relative;
     max-width: 100%;
 }
-
+/*ABOUT*/
 .text {
     display: inline-block;
     width: 49%;
@@ -191,7 +170,7 @@ header {
 .text + .text {
     margin-left: 10px;
 }
-
+/*FORMATS*/
 .tabs {
     position: relative;
     width: 100%;
@@ -221,19 +200,19 @@ header {
 }
 
 .tabs a:after {
-	display: block;
-	position: relative;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background-color:wheat;
-	content: "";
-	transition: width 0.3s ease-out;
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color:wheat;
+    content: "";
+    transition: width 0.3s ease-out;
 }
 
 .tabs a:hover:after,
 .tabs a:focus:after {
-	width: 100%;
+    width: 100%;
 }
 
 .little-columns {
@@ -243,11 +222,37 @@ header {
     position: relative;
     width: 100%;
     height: 90%;
-    border-top: 1px solid wheat;
 }
 
-.hide {
-    display: none;
+.little-columns:first-child {
+    border-top: 1px solid wheat;
+}
+/*DECKS*/
+.fade {
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
 }
 
 .slider {
@@ -257,6 +262,12 @@ header {
     position: relative;
     margin: 0 auto;
     background-color: black;
+}
+
+.deck {
+    transition: 0.5s;
+    max-width: 100%;
+    margin: 0;
 }
 
 .prev {
@@ -275,12 +286,6 @@ header {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.deck {
-    transition: 0.5s;
-    max-width: 100%;
-    margin: 0;
-}
-
 .next {
     position: absolute;
     cursor: pointer;
@@ -296,7 +301,7 @@ header {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
-
+/*FOOTER*/
 footer {
     position: absolute;
     background-color: #3d1413;
@@ -396,4 +401,8 @@ footer {
 .copiright p a {
     text-decoration: none;
     color: white;
+}
+/*MOBILE SCREENS*/
+@media screen and (max-width: 929px) {
+
 }
