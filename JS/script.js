@@ -28,21 +28,24 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 //TABS
   let tabs = document.querySelector(".tabs"),
-      tab = tabs.querySelectorAll("li"),
+      tab = tabs.querySelectorAll("a"),
       content = document.querySelectorAll(".little-columns");
 
   for (let i = 0; i < content.length; i++) {
     content[i].style.display = "none";
   }
   content[0].style.display = "flex";
+  tab[0].classList.add("active");
 
   for (let j = 0; j < tab.length; j++) {
     tab[j].addEventListener("click", function(e) {
       e.preventDefault();
       for (let i = 0; i < content.length; i++) {
         content[i].style.display = "none";
+        tab[i].classList.remove("active");
       }
       content[j].style.display = "flex";
+      tab[j].classList.add("active");
     });
   }
 //SLIDER
@@ -92,6 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
       menuButtons[i].addEventListener("click", () => {
         if (menu.style.display == "flex") {
           menu.style.display = "none";
+          menuButton.checked = false;
         }
       });
     }

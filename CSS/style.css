@@ -246,6 +246,17 @@ header {
     width: 100%;
 }
 
+.active:after {
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color:wheat;
+    content: "";
+    width: 100%!important;
+}
+
 .little-columns {
     display: flex;
     color: wheat;
