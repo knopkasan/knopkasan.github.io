@@ -75,4 +75,25 @@ window.addEventListener("DOMContentLoaded", () => {
   next.addEventListener("click", () => {
   plusSlides(1);
   });
+//MOBILE MENU
+  var menuButton = document.querySelector(".main-menu-button"),
+      menu = document.querySelector(".menu"),
+      menuButtons = menu.querySelectorAll("a");
+
+  menuButton.addEventListener("change", (e) => {
+    e.preventDefault();
+    if (menu.style.display == "" || menu.style.display == "none") {
+      menu.style.display = "flex";
+    } else {
+      menu.style.display = "none";
+    }
+
+    for (let i = 0; i < menuButtons.length; i++) {
+      menuButtons[i].addEventListener("click", () => {
+        if (menu.style.display == "flex") {
+          menu.style.display = "none";
+        }
+      });
+    }
+  });
 });
