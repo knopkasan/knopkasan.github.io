@@ -1,12 +1,20 @@
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
 //SCROLL
-  $(".menu").on("click","a", function (event) {
-      event.preventDefault();
-      var id  = $(this).attr('href'),
-          top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top}, 700);
-  });
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+        
+        const blockID = anchor.getAttribute('href').substr(1)
+        
+        document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+        })
+    })
+};
 //HEADER
   let header = document.querySelector("header"),
       logo = document.querySelector("#logo");
