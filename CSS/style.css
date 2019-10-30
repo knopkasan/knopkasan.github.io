@@ -180,7 +180,7 @@ header {
 }
 
 .text img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .first p {
@@ -264,6 +264,7 @@ header {
     position: relative;
     width: 100%;
     height: 90%;
+    margin: 0 auto;
     border-top: 1px solid wheat;
 }
 /*DECKS*/
@@ -325,6 +326,25 @@ header {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.prev:hover .arrow-left {
+    opacity: 1;
+}
+.arrow-left {
+    width: 30px;
+    height: 30px;
+    background: url(../icons/left-arrow.svg) center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    opacity: .6;
+    -webkit-transition: 1s;
+            transition: 1s;
+}
+
 .next {
     position: absolute;
     cursor: pointer;
@@ -340,6 +360,26 @@ header {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.next:hover .arrow-right {
+    opacity: 1;
+}
+
+.arrow-right {
+    width: 30px;
+    height: 30px;
+    background: url(../icons/right-arrow.svg) center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    opacity: .6;
+    -webkit-transition: 1s;
+            transition: 1s;
+  }
 /*FOOTER*/
 footer {
     position: absolute;
@@ -574,10 +614,6 @@ footer {
 /*PAGES*/
     .story, .formats, .decks {
         height: 100%;
-    }
-
-    .story, .decks {
-        background-image: none;
     }
 /*CONTENT BOXES*/
     .content {
